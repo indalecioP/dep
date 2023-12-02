@@ -1,6 +1,8 @@
 import { useContext, useState } from 'react'
 import { index, ver } from './verbEsp'
 import { habla } from './App'
+import Conjugar from './Conjugar';
+import Ver from './Ver';
 
 export default function Verbos() {
 
@@ -23,9 +25,9 @@ export default function Verbos() {
         {
           ver.map((e, i) => <option key={i}>{e}</option>)
         }
-      </select>
-      <button onClick={handleClick}>siguiente</button>
-      {index[verbo].frases[counter]}
+      </select>  
+      <Ver arreglo={index[verbo].frases} counter={counter} handleClick={handleClick} />
+      <Conjugar arreglo={index[verbo].frases} counter={counter} handleClick={handleClick} />
     </div>
   )
 }
