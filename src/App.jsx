@@ -4,7 +4,6 @@ import Cuentos from './Cuentos'
 import Verbos from './Verbos'
 import Espa from './Espa'
 
-import './App.css'
 export const habla = createContext()
 var speechMessage = new SpeechSynthesisUtterance();
 var voicesSp = []
@@ -16,10 +15,17 @@ function App() {
   return (
     <div>
       <habla.Provider value={hablar}>
-        <button onClick={() => hablar('hola')}>hola</button>
-        <Link to='/dep'>español</Link><br />
-        <Link to='/dep/cuentos'>cuentos</Link><br />
-        <Link to='/dep/verbos'>verbos</Link><br />
+        <div className='flex justify-evenly items-center h-40'>
+          <div className='flex justify-center'>
+            <Link className='button' to='/dep'>español</Link><br />
+          </div>
+          <div className='flex justify-center'>
+            <Link className='button' to='/dep/cuentos'>cuentos</Link><br />
+          </div>
+          <div className='flex justify-center'>
+            <Link className='button' to='/dep/verbos'>verbos</Link><br />
+          </div>
+        </div>
         <Routes>
           <Route>
             <Route path='/dep' element={<Espa />} />
@@ -33,8 +39,8 @@ function App() {
 }
 document.addEventListener('DOMContentLoaded', (e) => {
   speechSynthesis.addEventListener('voiceschanged', (e) => {
-    var voices = speechSynthesis.getVoices()  
-    voicesSp = voices.find(e=>e.name=='Google español')
+    var voices = speechSynthesis.getVoices()
+    voicesSp = voices.find(e => e.name == 'Google español')
   })
 })
 

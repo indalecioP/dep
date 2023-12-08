@@ -1,5 +1,5 @@
 export default function Espa() {
   return (
-    <div>Espa</div>
+    <div className="flex justify-center text-3xl">Hola vienbenidos</div>
   )
 }

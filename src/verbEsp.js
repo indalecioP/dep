@@ -1,4 +1,4 @@
-const gustar = ['a mi me ','a ti te ','a el le ']
+const gustar = ['a mí me ','a ti te ','a él le ']
 const darCon = ['yo te ','tu me ','el te ']
 const dar = (s) => darCon.map((e,i)=> e + s.split(',')[i]).join(',')
 const gus = (s) => gustar.map(e=>e +s).join(',')
@@ -340,8 +340,8 @@ export let verbo = [
   ],
   [
     ['gustar,'+gus('gusta'),gus('gustaba'),gus('gustó'),gus('ha gustado')],
-    'la películo,el libro,jugar al futbol,tocar el piano',
-    'cine,libro,futbol,piano',
+    'la película,el libro,jugar al futbol,tocar el piano',
+    'cine,libro,fútbol,piano',
     {
       preguntas:''
     }
