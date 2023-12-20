@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react'
+import { createContext } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import Cuentos from './Cuentos'
 import Verbos from './Verbos'
@@ -10,7 +10,6 @@ var voicesSp = []
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div>
@@ -37,8 +36,8 @@ function App() {
     </div>
   )
 }
-document.addEventListener('DOMContentLoaded', (e) => {
-  speechSynthesis.addEventListener('voiceschanged', (e) => {
+document.addEventListener('DOMContentLoaded', () => {
+  speechSynthesis.addEventListener('voiceschanged', () => {
     var voices = speechSynthesis.getVoices()
     voicesSp = voices.find(e => e.name == 'Google español')
   })
