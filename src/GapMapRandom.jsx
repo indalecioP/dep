@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState, useId, useContext, useEffect } from 'react'
 import {habla} from './App'
 
@@ -43,3 +44,7 @@ export default function GapMapRandom({ frases }) {
     </div>
   )
 }
+
+GapMapRandom.propTypes = {
+  frases: PropTypes.array,
+};
